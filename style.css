@@ -1,0 +1,120 @@
+:root {
+    --bg-color: #0a0a0a;
+    --bg-task: #262626;
+    --color-container: #171717;
+    --border-container: #4338ca;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: arial;
+}
+
+body {
+    background: var(--bg-color);
+    height: 100vh;
+    color: white;
+
+}
+
+main {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    background-color: var(--color-container);
+    border: solid 4px var(--border-container);
+    border-radius: 4px;
+    scrollbar-width: thin;
+}
+
+.l-list {
+    overflow: scroll;
+    scrollbar-width: thin;
+}
+
+.l-form {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-task);
+    padding: 10px;
+}
+
+.form {
+
+    display: grid;
+    grid-template-areas: 
+        "input input submit"
+    ;
+    gap: 10px;
+}
+
+.input {
+    grid-area: input;
+    padding: 8px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    color: var(--border-container);
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--color-container);
+    transition: all .2s ease-in-out;
+}
+
+.input:focus {
+    background-color: var(--bg-color);
+    box-shadow: 0px 0px 10px #4f46e5;
+}
+
+.submit {
+    grid-area: submit;
+    padding: 8px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    color: var(--border-container);
+    background: var(--color-container);
+    transition: all .2s ease-in-out;
+    font-size: 16px;
+}
+
+.submit:hover {
+    background-color: var(--bg-color);
+    box-shadow: 0px 0px 10px #4f46e5;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: .1fr 1fr 1fr;
+    grid-template-areas:
+        "checkbox task task"
+    ;
+    background-color: var(--bg-task);
+    border-radius: 4px;
+    margin: 8px 8px;
+}
+
+.checkbox {
+    grid-area: checkbox;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    margin: 8px;
+    background: var(--bg-color);
+}
+
+.task {
+    grid-area: task;
+    place-self: center start;
+    font-size: 24px;
+    margin: 10px 0px;
+}
